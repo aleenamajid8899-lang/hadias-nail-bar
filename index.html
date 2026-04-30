@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadia's Nail Bar – Lahore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush:#f5e6e8; --rose:#d4889a; --deep-rose:#b5647a; --mauve:#8c5a6e;
+  --cream:#fdf8f5; --nude:#e8d5c4; --dark:#2d1f26; --gold:#c9a96e;
+  --light-gold:#f0ddb8; --white:#fff; --text:#3d2a32; --muted:#9b7f89;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 60px;background:rgba(253,248,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,136,154,0.15);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:.05em;color:var(--dark);}
+.nav-logo span{color:var(--rose);font-style:italic;}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--deep-rose);}
+.btn-nav{background:var(--rose)!important;color:#fff!important;padding:10px 24px!important;border-radius:40px;cursor:pointer;}
+.btn-nav:hover{background:var(--deep-rose)!important;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blush) 0%,var(--cream) 50%,var(--light-gold) 100%);}
+.blob1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,136,154,.18) 0%,transparent 70%);animation:blob 8s ease-in-out infinite;}
+.blob2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.15) 0%,transparent 70%);animation:blob 10s ease-in-out infinite reverse;}
+@keyframes blob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.03)}}
+.hero-content{text-align:center;z-index:1;padding:20px;animation:fadeUp 1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.eyebrow::before,.eyebrow::after{content:'';width:40px;height:1px;background:var(--rose);opacity:.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1.05;color:var(--dark);}
+.hero h1 em{color:var(--rose);font-style:italic;}
+.hero-sub{font-size:1rem;color:var(--muted);margin:20px 0 28px;font-weight:300;letter-spacing:.05em;}
+.hero-stars{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:34px;}
+.stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;}
+.star-lbl{font-size:.85rem;color:var(--muted);}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:linear-gradient(135deg,var(--rose),var(--deep-rose));color:#fff;padding:15px 40px;border-radius:50px;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 30px rgba(181,100,122,.35);display:inline-block;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(181,100,122,.45);}
+.btn-o{border:1.5px solid var(--rose);color:var(--rose);padding:15px 40px;border-radius:50px;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;display:inline-block;}
+.btn-o:hover{background:var(--rose);color:#fff;}
+
+/* SECTIONS */
+section{padding:100px 60px;}
+.slbl{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);margin-bottom:12px;}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--dark);line-height:1.2;}
+.stitle em{color:var(--rose);font-style:italic;}
+.divider{width:60px;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold));margin:20px 0 40px;border-radius:2px;}
+.ctr{text-align:center;}.ctr .divider{margin:20px auto 40px;}
+
+/* SERVICES */
+#services{background:var(--white);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:1200px;margin:0 auto;}
+.svc-card{background:var(--cream);border:1px solid rgba(212,136,154,.15);border-radius:20px;padding:32px 28px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--gold));opacity:0;transition:opacity .25s;}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(181,100,122,.12);}
+.svc-card:hover::before{opacity:1;}
+.svc-icon{font-size:2rem;margin-bottom:16px;}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);margin-bottom:8px;}
+.svc-desc{font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+.svc-price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--rose);font-weight:300;}
+.svc-price span{font-size:.75rem;color:var(--muted);font-family:'DM Sans',sans-serif;}
+
+/* GALLERY */
+#gallery{background:var(--dark);}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;max-width:1200px;margin:0 auto;}
+.gal-item{aspect-ratio:1;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;background:#3d2a32;border:1px solid rgba(212,136,154,.15);}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block;}
+.gal-item:hover img{transform:scale(1.07);}
+.gal-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(45,31,38,.7) 0%,transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px;}
+.gal-item:hover .gal-ov{opacity:1;}
+.gal-lbl{color:#fff;font-size:.8rem;}
+.gal-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 20px;font-size:.9rem;}
+
+/* INSPO */
+#inspo{background:var(--blush);}
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;max-width:1200px;margin:0 auto;}
+.ins-card{border-radius:16px;overflow:hidden;background:var(--white);border:1px solid rgba(212,136,154,.2);transition:transform .25s,box-shadow .25s;}
+.ins-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(181,100,122,.15);}
+.ins-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;}
+.ins-ph{width:100%;aspect-ratio:1;background:linear-gradient(135deg,var(--blush),var(--nude));display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.ins-body{padding:16px;}
+.ins-style{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);}
+.ins-price{font-size:.78rem;color:var(--rose);margin-top:4px;}
+.ins-notes{font-size:.75rem;color:var(--muted);margin-top:6px;}
+.ins-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px;}
+
+/* ABOUT */
+#about{background:linear-gradient(135deg,var(--cream) 60%,var(--blush) 100%);display:flex;align-items:center;gap:80px;flex-wrap:wrap;}
+.about-t{flex:1;min-width:280px;}
+.about-t p{font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:16px;}
+.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:40px;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--rose);}
+.stat-lbl{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+.about-art{flex:1;min-width:280px;background:linear-gradient(135deg,var(--rose),var(--mauve));border-radius:30px;aspect-ratio:.85;display:flex;align-items:center;justify-content:center;font-size:6rem;}
+
+/* CONTACT */
+#contact{background:var(--dark);}
+.ct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:1000px;margin:50px auto 0;}
+.ct-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,136,154,.15);border-radius:20px;padding:28px 24px;}
+.ct-icon{font-size:1.8rem;margin-bottom:14px;}
+.ct-ttl{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.ct-body{font-size:.9rem;color:rgba(253,248,245,.75);line-height:1.7;}
+.ct-body a{color:var(--rose);text-decoration:none;}
+
+footer{background:#1a0f14;text-align:center;padding:36px;font-size:.78rem;color:var(--muted);}
+footer span{color:var(--rose);}
+
+/* LOGIN MODAL */
+.overlay{position:fixed;inset:0;z-index:999;background:rgba(45,31,38,.65);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;}
+.overlay.on{display:flex;}
+.modal{background:var(--cream);border-radius:24px;padding:48px 44px;width:100%;max-width:420px;position:relative;animation:mIn .3s ease;}
+@keyframes mIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-x{position:absolute;top:18px;right:20px;background:none;border:none;font-size:1.4rem;color:var(--muted);cursor:pointer;}
+.modal h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--dark);margin-bottom:6px;}
+.modal-sub{font-size:.82rem;color:var(--muted);margin-bottom:28px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.fg input{width:100%;padding:13px 16px;border:1.5px solid rgba(212,136,154,.25);border-radius:12px;background:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--dark);outline:none;transition:border-color .2s;}
+.fg input:focus{border-color:var(--rose);}
+.btn-full{width:100%;background:linear-gradient(135deg,var(--rose),var(--deep-rose));color:#fff;border:none;padding:15px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s;box-shadow:0 6px 25px rgba(181,100,122,.35);}
+.btn-full:hover{transform:translateY(-1px);}
+.lerr{color:#c0392b;font-size:.8rem;margin-top:10px;display:none;}
+
+/* DASHBOARD */
+#dash{display:none;min-height:100vh;background:var(--cream);}
+.dnav{background:var(--dark);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;}
+.dlogo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--cream);font-weight:300;}
+.dlogo span{color:var(--rose);font-style:italic;}
+.dnav-r{display:flex;gap:10px;}
+.db{padding:9px 20px;border-radius:30px;border:1.5px solid rgba(212,136,154,.3);background:transparent;color:var(--cream);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.db:hover{background:var(--rose);border-color:var(--rose);}
+.dbody{padding:40px;max-width:1200px;margin:0 auto;}
+.dh{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--dark);font-weight:300;margin-bottom:6px;}
+.ds{font-size:.84rem;color:var(--muted);margin-bottom:36px;}
+.tabs{display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap;}
+.tab{padding:10px 22px;border-radius:30px;border:1.5px solid rgba(212,136,154,.25);background:transparent;color:var(--muted);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.tab.on,.tab:hover{background:var(--rose);border-color:var(--rose);color:#fff;}
+.panel{display:none;}.panel.on{display:block;}
+.dcard{background:var(--white);border:1px solid rgba(212,136,154,.15);border-radius:20px;padding:32px;margin-bottom:24px;}
+.dcard h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:20px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.dfg{margin-bottom:16px;}
+.dfg label{display:block;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.dfg input,.dfg textarea{width:100%;padding:11px 14px;border:1.5px solid rgba(212,136,154,.2);border-radius:10px;background:var(--cream);font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--dark);outline:none;transition:border-color .2s;}
+.dfg input:focus,.dfg textarea:focus{border-color:var(--rose);}
+.dfg textarea{min-height:80px;resize:vertical;}
+.add-btn{background:linear-gradient(135deg,var(--rose),var(--deep-rose));color:#fff;border:none;padding:12px 30px;border-radius:30px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s;box-shadow:0 4px 20px rgba(181,100,122,.3);font-family:'DM Sans',sans-serif;}
+.add-btn:hover{transform:translateY(-1px);}
+.ilist{display:flex;flex-direction:column;gap:12px;}
+.irow{background:var(--cream);border:1px solid rgba(212,136,154,.12);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.irow-info{flex:1;}
+.irow-name{font-size:.95rem;color:var(--dark);font-weight:500;}
+.irow-sub{font-size:.78rem;color:var(--muted);margin-top:3px;}
+.irow-price{color:var(--rose);font-family:'Cormorant Garamond',serif;font-size:1.3rem;}
+.del-btn{background:none;border:1.5px solid rgba(192,57,43,.25);color:#c0392b;padding:6px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.del-btn:hover{background:#c0392b;color:#fff;}
+.empty-s{color:var(--muted);font-size:.85rem;padding:20px 0;}
+.upzone{border:2px dashed rgba(212,136,154,.35);border-radius:16px;padding:40px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;}
+.upzone:hover{border-color:var(--rose);background:rgba(212,136,154,.04);}
+.upzone .ui{font-size:2.5rem;margin-bottom:10px;}
+.upzone .ul{font-size:.88rem;color:var(--muted);}
+.upzone .ul span{color:var(--rose);}
+.previews{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin-top:16px;}
+.thumb{aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative;background:var(--blush);}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.thumb .rmv{position:absolute;top:5px;right:5px;background:rgba(45,31,38,.75);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:.65rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+
+.toast{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--dark);color:var(--cream);padding:13px 22px;border-radius:12px;font-size:.84rem;box-shadow:0 8px 30px rgba(0,0,0,.3);transform:translateY(80px);opacity:0;transition:all .3s;border-left:3px solid var(--rose);}
+.toast.on{transform:translateY(0);opacity:1;}
+
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .nav-links a:not(.btn-nav){display:none;}
+  section{padding:70px 20px;}
+  #about{flex-direction:column;gap:40px;}
+  .frow{grid-template-columns:1fr;}
+  .dbody{padding:24px 16px;}
+  .dnav{padding:14px 20px;}
+  .modal{padding:36px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ PUBLIC SITE ═══ -->
+<div id="site">
+<nav>
+  <div class="nav-logo">Hadia's <span>Nail Bar</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#inspo">Inspo</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="btn-nav" id="open-login">Owner Login</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="blob1"></div><div class="blob2"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Lahore's Finest Nail Studio</div>
+    <h1>Hadia's<br><em>Nail Bar</em></h1>
+    <p class="hero-sub">Where every nail tells a story of elegance</p>
+    <div class="hero-stars">
+      <span class="stars">★★★★★</span>
+      <span class="star-lbl">4.8 · 443 Reviews on Google</span>
+    </div>
+    <div class="hero-cta">
+      <a href="tel:03304137828" class="btn-p">📞 Book Now</a>
+      <a href="#services" class="btn-o">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="ctr" style="margin-bottom:56px">
+    <div class="slbl">Our Menu</div>
+    <h2 class="stitle">Nail <em>Services</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="svc-grid" id="pub-svc"></div>
+</section>
+
+<section id="gallery">
+  <div class="ctr" style="margin-bottom:50px">
+    <div class="slbl" style="color:var(--gold)">Our Work</div>
+    <h2 class="stitle" style="color:var(--cream)">The <em>Gallery</em></h2>
+    <div class="divider" style="margin:20px auto 0"></div>
+  </div>
+  <div class="gal-grid" id="pub-gal"></div>
+</section>
+
+<section id="inspo">
+  <div class="ctr" style="margin-bottom:50px">
+    <div class="slbl">Style Reference</div>
+    <h2 class="stitle">Nail <em>Inspiration</em></h2>
+    <div class="divider"></div>
+    <p style="color:var(--muted);font-size:.88rem;max-width:500px;margin:0 auto">Browse styles our artists can recreate for you</p>
+  </div>
+  <div class="ins-grid" id="pub-ins"></div>
+</section>
+
+<section id="about">
+  <div class="about-t">
+    <div class="slbl">Our Story</div>
+    <h2 class="stitle">Crafted with <em>Love</em></h2>
+    <div class="divider"></div>
+    <p>Welcome to Hadia's Nail Bar — a luxury nail studio nestled in the heart of Model Town, Lahore. We believe beautiful nails are an expression of your personality and confidence.</p>
+    <p>Our skilled artists use only premium, skin-safe products to deliver flawless results — from classic manicures to the most intricate nail art. Every visit is a pampering experience tailored just for you.</p>
+    <div class="stats">
+      <div><div class="stat-num">4.8★</div><div class="stat-lbl">Google Rating</div></div>
+      <div><div class="stat-num">443+</div><div class="stat-lbl">Happy Reviews</div></div>
+      <div><div class="stat-num">5+</div><div class="stat-lbl">Years of Service</div></div>
+    </div>
+  </div>
+  <div class="about-art">💅</div>
+</section>
+
+<section id="contact">
+  <div class="ctr">
+    <div class="slbl" style="color:var(--gold)">Find Us</div>
+    <h2 class="stitle" style="color:var(--cream)">Visit <em>Us</em></h2>
+    <div class="divider" style="margin:20px auto 0"></div>
+  </div>
+  <div class="ct-grid">
+    <div class="ct-card"><div class="ct-icon">📍</div><div class="ct-ttl">Address</div><div class="ct-body">Shop No 10, 1st Floor<br>Near Leopard Courier, Block C<br>Model Town, Lahore 54700</div></div>
+    <div class="ct-card"><div class="ct-icon">📞</div><div class="ct-ttl">Phone</div><div class="ct-body"><a href="tel:03304137828">0330 4137828</a></div></div>
+    <div class="ct-card"><div class="ct-icon">🕐</div><div class="ct-ttl">Hours</div><div class="ct-body">Opens 11:00 AM daily<br>Monday – Sunday</div></div>
+    <div class="ct-card"><div class="ct-icon">⭐</div><div class="ct-ttl">Reviews</div><div class="ct-body">Rated <strong style="color:var(--gold)">4.8 / 5</strong> on Google<br>443 customer reviews</div></div>
+  </div>
+</section>
+
+<footer>&copy; 2024 <span>Hadia's Nail Bar</span> · Model Town, Lahore · Made with 💅</footer>
+</div>
+
+<!-- ═══ LOGIN MODAL ═══ -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-x" id="close-modal">✕</button>
+    <h2>Owner Login</h2>
+    <p class="modal-sub">Access your salon dashboard</p>
+    <div class="fg"><label>Username</label><input type="text" id="inp-u" placeholder="Username" autocomplete="username"></div>
+    <div class="fg"><label>Password</label><input type="password" id="inp-p" placeholder="Password" autocomplete="current-password"></div>
+    <button class="btn-full" id="do-login">Login to Dashboard</button>
+    <div class="lerr" id="lerr">⚠️ Incorrect username or password.</div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="dash">
+  <div class="dnav">
+    <div class="dlogo">Hadia's <span>Nail Bar</span> — Dashboard</div>
+    <div class="dnav-r">
+      <button class="db" id="view-site">View Site</button>
+      <button class="db" id="logout">Logout</button>
+    </div>
+  </div>
+  <div class="dbody">
+    <div class="dh">Welcome back, Hadia 💅</div>
+    <div class="ds">Manage your services, gallery, and nail inspo from here.</div>
+    <div class="tabs">
+      <button class="tab on" data-tab="svc">Services & Prices</button>
+      <button class="tab" data-tab="gal">Gallery</button>
+      <button class="tab" data-tab="ins">Nail Inspo</button>
+    </div>
+
+    <!-- SERVICES PANEL -->
+    <div class="panel on" id="panel-svc">
+      <div class="dcard">
+        <h3>Add New Service</h3>
+        <div class="frow">
+          <div class="dfg"><label>Service Name</label><input type="text" id="s-name" placeholder="e.g. Gel Extension"></div>
+          <div class="dfg"><label>Price (PKR)</label><input type="number" id="s-price" placeholder="e.g. 2500"></div>
+        </div>
+        <div class="dfg"><label>Description</label><textarea id="s-desc" placeholder="Brief description..."></textarea></div>
+        <div class="dfg"><label>Icon (emoji)</label><input type="text" id="s-icon" placeholder="💅" maxlength="4" style="width:100px"></div>
+        <button class="add-btn" id="add-svc">+ Add Service</button>
+      </div>
+      <div class="dcard"><h3>Current Services</h3><div class="ilist" id="d-svc"></div></div>
+    </div>
+
+    <!-- GALLERY PANEL -->
+    <div class="panel" id="panel-gal">
+      <div class="dcard">
+        <h3>Upload Gallery Photos</h3>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:20px">Add your nail art photos to showcase on the website</p>
+        <div class="upzone" id="upzone"><div class="ui">🖼️</div><div class="ul">Drop images here or <span>browse files</span></div><div style="font-size:.75rem;color:var(--muted);margin-top:6px">JPG, PNG, WEBP</div></div>
+        <input type="file" id="gal-file" accept="image/*" multiple style="display:none">
+        <div class="frow" style="margin-top:8px">
+          <div class="dfg"><label>Or paste image URL</label><input type="url" id="gal-url" placeholder="https://..."></div>
+          <div class="dfg"><label>Label (optional)</label><input type="text" id="gal-lbl" placeholder="e.g. Ombre Tips"></div>
+        </div>
+        <button class="add-btn" id="add-gal-url">+ Add from URL</button>
+        <div class="previews" id="gal-prev"></div>
+      </div>
+    </div>
+
+    <!-- INSPO PANEL -->
+    <div class="panel" id="panel-ins">
+      <div class="dcard">
+        <h3>Add Nail Inspiration</h3>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:20px">Reference photos with prices for staff use</p>
+        <div class="frow">
+          <div class="dfg"><label>Style Name</label><input type="text" id="i-name" placeholder="e.g. French Ombre"></div>
+          <div class="dfg"><label>Reference Price (PKR)</label><input type="number" id="i-price" placeholder="e.g. 3000"></div>
+        </div>
+        <div class="dfg"><label>Image URL</label><input type="url" id="i-img" placeholder="https://..."></div>
+        <div class="dfg"><label>Or upload image</label><input type="file" id="i-file" accept="image/*" style="padding:8px;background:var(--cream);border:1.5px solid rgba(212,136,154,.2);border-radius:10px;width:100%;font-size:.85rem;cursor:pointer"></div>
+        <div class="dfg"><label>Staff Notes</label><textarea id="i-notes" placeholder="Technique, products to use..."></textarea></div>
+        <button class="add-btn" id="add-ins">+ Add Inspo</button>
+      </div>
+      <div class="dcard"><h3>Inspo Collection</h3><div class="ilist" id="d-ins"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── STATE ───────────────────────────────────────────────────────────
+const CREDS = {user:'hadia', pass:'nailbar2024'};
+
+var services = [
+  {id:1,name:'Classic Manicure',desc:'Shape, buff, cuticle care & polish of your choice',price:800,icon:'💅'},
+  {id:2,name:'Gel Manicure',desc:'Long-lasting gel polish with UV curing — up to 3 weeks',price:1500,icon:'✨'},
+  {id:3,name:'Gel Extensions',desc:'Full gel nail extensions — any length & shape you like',price:2800,icon:'💎'},
+  {id:4,name:'Nail Art',desc:'Custom hand-painted designs, stamping & embellishments',price:500,icon:'🎨'},
+  {id:5,name:'Classic Pedicure',desc:'Foot soak, scrub, nail shaping & polish',price:1200,icon:'🦶'},
+  {id:6,name:'Acrylic Extensions',desc:'Strong acrylic nail extensions customised to your style',price:3200,icon:'🌸'},
+];
+var gallery = [];
+var inspo = [];
+var inspoFile = null;
+
+function fmt(n){return Number(n).toLocaleString('en-PK');}
+
+// ─── TOAST ───────────────────────────────────────────────────────────
+function showToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('on');
+  setTimeout(function(){t.classList.remove('on');},2800);
+}
+
+// ─── PUBLIC RENDERS ──────────────────────────────────────────────────
+function renderPubSvc(){
+  document.getElementById('pub-svc').innerHTML=services.map(function(s){
+    return '<div class="svc-card"><div class="svc-icon">'+s.icon+'</div><div class="svc-name">'+s.name+'</div><div class="svc-desc">'+s.desc+'</div><div class="svc-price">PKR '+fmt(s.price)+' <span>onwards</span></div></div>';
+  }).join('');
+}
+
+function renderPubGal(){
+  var g=document.getElementById('pub-gal');
+  if(!gallery.length){g.innerHTML='<div class="gal-empty">🌸 Gallery coming soon — check back for our latest work!</div>';return;}
+  g.innerHTML=gallery.map(function(item){
+    return '<div class="gal-item"><img src="'+item.src+'" alt="'+item.label+'" onerror="this.parentElement.style.display=\'none\'"><div class="gal-ov"><span class="gal-lbl">'+item.label+'</span></div></div>';
+  }).join('');
+}
+
+function renderPubIns(){
+  var g=document.getElementById('pub-ins');
+  if(!inspo.length){g.innerHTML='<div class="ins-empty">Inspiration collection coming soon!</div>';return;}
+  g.innerHTML=inspo.map(function(it){
+    var img=it.img?'<img src="'+it.img+'" alt="'+it.name+'" class="ins-img" onerror="this.style.display=\'none\'">'+'<div class="ins-ph" style="display:none">💅</div>':'<div class="ins-ph">💅</div>';
+    return '<div class="ins-card">'+img+'<div class="ins-body"><div class="ins-style">'+it.name+'</div><div class="ins-price">From PKR '+fmt(it.price)+'</div>'+(it.notes?'<div class="ins-notes">'+it.notes+'</div>':'')+'</div></div>';
+  }).join('');
+}
+
+// ─── DASHBOARD RENDERS ───────────────────────────────────────────────
+function renderDashSvc(){
+  var el=document.getElementById('d-svc');
+  if(!services.length){el.innerHTML='<p class="empty-s">No services yet. Add one above!</p>';return;}
+  el.innerHTML=services.map(function(s){
+    return '<div class="irow"><div class="irow-info"><div class="irow-name">'+s.icon+' '+s.name+'</div><div class="irow-sub">'+s.desc+'</div></div><div class="irow-price">PKR '+fmt(s.price)+'</div><button class="del-btn" data-type="svc" data-id="'+s.id+'">Remove</button></div>';
+  }).join('');
+}
+
+function renderDashGal(){
+  var el=document.getElementById('gal-prev');
+  el.innerHTML=gallery.map(function(g,i){
+    return '<div class="thumb"><img src="'+g.src+'" alt="'+g.label+'" onerror="this.parentElement.style.display=\'none\'"><button class="rmv" data-type="gal" data-idx="'+i+'">✕</button></div>';
+  }).join('');
+}
+
+function renderDashIns(){
+  var el=document.getElementById('d-ins');
+  if(!inspo.length){el.innerHTML='<p class="empty-s">No inspo yet. Add some references above!</p>';return;}
+  el.innerHTML=inspo.map(function(it,i){
+    var thumb=it.img?'<img src="'+it.img+'" style="width:54px;height:54px;object-fit:cover;border-radius:10px;flex-shrink:0" onerror="this.style.display=\'none\'">':'<div style="width:54px;height:54px;background:var(--blush);border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem">💅</div>';
+    return '<div class="irow">'+thumb+'<div class="irow-info"><div class="irow-name">'+it.name+'</div><div class="irow-sub">'+(it.notes||'')+'</div></div><div class="irow-price">PKR '+fmt(it.price)+'</div><button class="del-btn" data-type="ins" data-idx="'+i+'">Remove</button></div>';
+  }).join('');
+}
+
+// ─── LOGIN ───────────────────────────────────────────────────────────
+document.getElementById('open-login').addEventListener('click',function(e){
+  e.preventDefault();document.getElementById('overlay').classList.add('on');
+});
+document.getElementById('close-modal').addEventListener('click',function(){
+  document.getElementById('overlay').classList.remove('on');
+});
+document.getElementById('overlay').addEventListener('click',function(e){
+  if(e.target===this) this.classList.remove('on');
+});
+document.getElementById('do-login').addEventListener('click',function(){
+  var u=document.getElementById('inp-u').value.trim();
+  var p=document.getElementById('inp-p').value;
+  if(u===CREDS.user&&p===CREDS.pass){
+    document.getElementById('lerr').style.display='none';
+    document.getElementById('overlay').classList.remove('on');
+    document.getElementById('site').style.display='none';
+    document.getElementById('dash').style.display='block';
+    window.scrollTo(0,0);
+    renderDashSvc();renderDashGal();renderDashIns();
+  } else {
+    document.getElementById('lerr').style.display='block';
+  }
+});
+['inp-u','inp-p'].forEach(function(id){
+  document.getElementById(id).addEventListener('keydown',function(e){
+    if(e.key==='Enter') document.getElementById('do-login').click();
+  });
+});
+
+function goToSite(){
+  document.getElementById('dash').style.display='none';
+  document.getElementById('site').style.display='block';
+  renderPubSvc();renderPubGal();renderPubIns();
+  window.scrollTo(0,0);
+}
+document.getElementById('view-site').addEventListener('click',goToSite);
+document.getElementById('logout').addEventListener('click',goToSite);
+
+// ─── TABS ────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
+    tab.classList.add('on');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('on');
+  });
+});
+
+// ─── ADD SERVICE ─────────────────────────────────────────────────────
+document.getElementById('add-svc').addEventListener('click',function(){
+  var name=document.getElementById('s-name').value.trim();
+  var price=document.getElementById('s-price').value;
+  var desc=document.getElementById('s-desc').value.trim();
+  var icon=document.getElementById('s-icon').value.trim()||'💅';
+  if(!name||!price){showToast('Please fill in name and price!');return;}
+  services.push({id:Date.now(),name:name,price:Number(price),desc:desc,icon:icon});
+  renderDashSvc();
+  ['s-name','s-price','s-desc','s-icon'].forEach(function(id){document.getElementById(id).value='';});
+  showToast('✅ Service added!');
+});
+
+// ─── GALLERY ─────────────────────────────────────────────────────────
+document.getElementById('upzone').addEventListener('click',function(){document.getElementById('gal-file').click();});
+document.getElementById('gal-file').addEventListener('change',function(e){
+  var files=Array.from(e.target.files);var done=0;
+  if(!files.length)return;
+  files.forEach(function(f){
+    var r=new FileReader();
+    r.onload=function(ev){
+      gallery.push({src:ev.target.result,label:f.name.replace(/\.[^.]+$/,'')});
+      if(++done===files.length){renderDashGal();showToast('✅ '+files.length+' photo(s) added!');}
+    };
+    r.readAsDataURL(f);
+  });
+  e.target.value='';
+});
+document.getElementById('add-gal-url').addEventListener('click',function(){
+  var url=document.getElementById('gal-url').value.trim();
+  var lbl=document.getElementById('gal-lbl').value.trim()||'Nail Art';
+  if(!url){showToast('Please enter an image URL!');return;}
+  gallery.push({src:url,label:lbl});
+  document.getElementById('gal-url').value='';
+  document.getElementById('gal-lbl').value='';
+  renderDashGal();showToast('✅ Image added!');
+});
+
+// ─── INSPO ───────────────────────────────────────────────────────────
+document.getElementById('i-file').addEventListener('change',function(e){
+  var f=e.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(ev){inspoFile=ev.target.result;};
+  r.readAsDataURL(f);
+});
+document.getElementById('add-ins').addEventListener('click',function(){
+  var name=document.getElementById('i-name').value.trim();
+  var price=document.getElementById('i-price').value;
+  var imgUrl=document.getElementById('i-img').value.trim();
+  var notes=document.getElementById('i-notes').value.trim();
+  if(!name||!price){showToast('Please fill in style name and price!');return;}
+  inspo.push({name:name,price:Number(price),img:inspoFile||imgUrl||'',notes:notes});
+  inspoFile=null;
+  renderDashIns();
+  ['i-name','i-price','i-img','i-notes'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('i-file').value='';
+  showToast('✅ Inspo added!');
+});
+
+// ─── DELETE DELEGATION ────────────────────────────────────────────────
+document.addEventListener('click',function(e){
+  if(e.target.matches('.del-btn')){
+    var type=e.target.dataset.type;
+    if(type==='svc'){services=services.filter(function(s){return s.id!==Number(e.target.dataset.id);});renderDashSvc();showToast('🗑️ Service removed');}
+    else if(type==='ins'){inspo.splice(Number(e.target.dataset.idx),1);renderDashIns();showToast('🗑️ Inspo removed');}
+  }
+  if(e.target.matches('.rmv')){
+    if(e.target.dataset.type==='gal'){gallery.splice(Number(e.target.dataset.idx),1);renderDashGal();showToast('🗑️ Photo removed');}
+  }
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────
+renderPubSvc();
+renderPubGal();
+renderPubIns();
+</script>
+</body>
+</html>
